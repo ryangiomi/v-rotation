@@ -1,4 +1,8 @@
 .App {
   font-family: sans-serif;
+  font-size: 20px;
   text-align: center;
+}
+.rotation-grid:nth-of-type(even) {
+  background-color: #b7e3ef;
 }
