@@ -1,6 +1,6 @@
 import personIndex from "./startRotation";
 
-const person = ["Evelette", "Ashlyn", "Juliette", "Keilyn", "Ronnie"];
+const person = ["Juliette", "Ronnie", "Ashlyn", "Keilyn", "Evelette"];
 
 const time = [
   "0600",
@@ -20,7 +20,7 @@ const time = [
   "2000",
   "2100",
   "2200",
-  "2300",
+  "2300"
 ];
 
 export default (props) => {
@@ -41,7 +41,7 @@ export default (props) => {
           gridColumnStart: 1,
           gridColumnEnd: 3,
           height: "2rem",
-          width: "200px",
+          width: "200px"
         }}
       >
         <span
@@ -52,7 +52,7 @@ export default (props) => {
             gridColumnStart: 1,
             gridColumnEnd: 2,
             paddingTop: ".4rem",
-            width: "100px",
+            width: "100px"
           }}
         >
           {time}
@@ -66,7 +66,7 @@ export default (props) => {
             gridColumnEnd: 3,
             paddingTop: ".4rem",
             justifyContent: "left",
-            width: "100px",
+            width: "100px"
           }}
         >
           {person[currentPersonIndex - 1]}
