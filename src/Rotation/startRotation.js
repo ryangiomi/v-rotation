@@ -9,20 +9,17 @@ const today = currentDate.getDay();
 const msDay = 24 * 60 * 60 * 1000;
 let mostRecentSaturdayTimestamp;
 
-// If today is Saturday, continue with this Saturday.
-if (today === 6) {
-  mostRecentSaturdayTimestamp = Date.parse(new Date());
-} else {
-  // (6 - today): days til next Saturday.
-  const daysTilNextSaturday = 6 - today;
-  const daysFromLastSaturday = 7 - daysTilNextSaturday;
-  const msFromNextSaturday = daysFromLastSaturday * msDay;
+// (6 - today): days til next Saturday.
+const daysTilNextSaturday = 6 - today;
+const daysFromLastSaturday = 7 - daysTilNextSaturday;
+const msFromNextSaturday = daysFromLastSaturday * msDay;
 
-  mostRecentSaturdayTimestamp = Date.parse(currentDate) - msFromNextSaturday;
-}
+mostRecentSaturdayTimestamp = Date.parse(currentDate) - msFromNextSaturday;
 
 const daysFromStartingTimeStamp =
   (mostRecentSaturdayTimestamp - startingTimeStamp) / msDay;
+
+// "5" directly relates to the number of people in the rotation.
 const personIndex = Math.floor(daysFromStartingTimeStamp % 5);
 
 export default personIndex;
