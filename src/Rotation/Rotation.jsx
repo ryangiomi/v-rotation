@@ -8,7 +8,8 @@ const index = {
   4: "Evelette",
 };
 
-const person = ["Ronnie", "Keilyn", "Juliette", "Ashlyn", "Evelette"];
+// Reversing the array below in order to maintain the index mapping.
+const person = ["Ronnie", "Keilyn", "Juliette", "Ashlyn", "Evelette"].reverse();
 
 const time = [
   "0600",
