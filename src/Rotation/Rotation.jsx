@@ -1,6 +1,14 @@
 import personIndex from "./startRotation";
 
-const person = ["Juliette", "Ronnie", "Ashlyn", "Keilyn", "Evelette"];
+const index = {
+  0: "Juliette",
+  1: "Ronnie",
+  2: "Ashlyn",
+  3: "Keilyn",
+  4: "Evelette",
+};
+
+const person = ["Ronnie", "Keilyn", "Juliette", "Ashlyn", "Evelette"];
 
 const time = [
   "0600",
@@ -20,11 +28,20 @@ const time = [
   "2000",
   "2100",
   "2200",
-  "2300"
+  "2300",
 ];
 
+function getNormalizedIndex(i) {
+  return person.indexOf(index[i]);
+}
+
 export default (props) => {
-  let currentPersonIndex = props.personIndex || personIndex;
+  const { personIndex: propsPersonIndex } = props;
+  let currentPersonIndex = propsPersonIndex
+    ? // Use props.
+      getNormalizedIndex(propsPersonIndex)
+    : // Use built in.
+      getNormalizedIndex(personIndex);
 
   return time.map((time, index) => {
     currentPersonIndex = currentPersonIndex % 5;
@@ -41,7 +58,7 @@ export default (props) => {
           gridColumnStart: 1,
           gridColumnEnd: 3,
           height: "2rem",
-          width: "200px"
+          width: "200px",
         }}
       >
         <span
@@ -52,7 +69,7 @@ export default (props) => {
             gridColumnStart: 1,
             gridColumnEnd: 2,
             paddingTop: ".4rem",
-            width: "100px"
+            width: "100px",
           }}
         >
           {time}
@@ -66,9 +83,10 @@ export default (props) => {
             gridColumnEnd: 3,
             paddingTop: ".4rem",
             justifyContent: "left",
-            width: "100px"
+            width: "100px",
           }}
         >
+          {/* {person.indexOf(index[personIndex]) + 1} */}
           {person[currentPersonIndex - 1]}
         </span>
       </div>
