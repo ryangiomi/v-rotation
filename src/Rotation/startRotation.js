@@ -3,7 +3,9 @@ const startingTimeStamp = Date.parse(new Date("10/29/22"));
 const currentDate = new Date();
 
 // This returns a number, Sunday (0) thru Saturday (6).
-const today = currentDate.getDay();
+let today = currentDate.getDay();
+
+today = today === 6 ? today : today - 3;
 
 // Milliseconds in a day.
 const msDay = 24 * 60 * 60 * 1000;
