@@ -1,8 +1,25 @@
 .App {
   font-family: sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
 }
+
 .rotation-grid:nth-of-type(even) {
   background-color: #b7e3ef;
+}
+
+.rotation-grid {
+  font-size: 1.5rem;
+  height: 2.75rem;
+  width: 200px;
+}
+
+.rotation-grid span {
+  padding-top: .5rem;
+}
+
+@media screen and (max-width: 500px) {
+  .rotation-grid {
+    width: 100%;
+  }
 }
