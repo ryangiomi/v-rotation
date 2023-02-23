@@ -74,8 +74,6 @@ export default (props) => {
           gridRowEnd: 2,
           gridColumnStart: 1,
           gridColumnEnd: 3,
-          height: "2rem",
-          width: "200px",
         }}
       >
         <span
@@ -85,7 +83,6 @@ export default (props) => {
             gridRowEnd: 2,
             gridColumnStart: 1,
             gridColumnEnd: 2,
-            paddingTop: ".4rem",
             width: "100px",
           }}
         >
@@ -98,7 +95,6 @@ export default (props) => {
             gridRowEnd: 2,
             gridColumnStart: 2,
             gridColumnEnd: 3,
-            paddingTop: ".4rem",
             justifyContent: "left",
             width: "100px",
           }}
