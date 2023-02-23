@@ -36,6 +36,22 @@ function getNormalizedIndex(i) {
   return person.indexOf(index[i]);
 }
 
+/**
+ * classNameCurrentTime
+ *
+ * @param {String} scheduleTime
+ * @returns "current" when the current time aligns with a scheduled time,
+ *          an empty string ("") if the time block is current time.
+ */
+function classNameCurrentTime(scheduleTime) {
+  const currentHour = new Date().getHours();
+  const scheduleHour = parseInt(scheduleTime.substring(0, 2), 10);
+
+  // Return a string indicating the current schedule block.
+  return currentHour === scheduleHour ? "current" : "";
+}
+
+
 export default (props) => {
   const { personIndex: propsPersonIndex } = props;
   let currentPersonIndex = propsPersonIndex
@@ -50,7 +66,7 @@ export default (props) => {
 
     return (
       <div
-        className="rotation-grid"
+        className={`rotation-grid ${classNameCurrentTime(time)}`}
         key={index}
         style={{
           display: "grid",
@@ -87,7 +103,6 @@ export default (props) => {
             width: "100px",
           }}
         >
-          {/* {person.indexOf(index[personIndex]) + 1} */}
           {person[currentPersonIndex - 1]}
         </span>
       </div>
